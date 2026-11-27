@@ -21,13 +21,13 @@ jobs:
         with:
           path: sitio/
 
-publicar:
-  needs: validar
-  if: github.event_name == 'push'
-  runs-on: ubuntu-latest
-  permissions:
-    pages: write
-    id-token: write
-  environment: github-pages
-  steps:
-    - uses: actions/deploy-pages@v4
+  publicar:
+    needs: validar
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
